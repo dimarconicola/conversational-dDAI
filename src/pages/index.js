@@ -52,9 +52,9 @@ function IndexPage(props) {
       <Footer
         color="white"
         size="medium"
-        logo="https://uploads.divjoy.com/logo.svg"
-        description="A short description of what you do here"
-        copyright="© 2019 Company"
+        logo="../images/logo.svg"
+        description="Earn dDai - Interest with smart DeFi recipes"
+        copyright="© 2019 Dexlab.io"
       />
     </>
   );

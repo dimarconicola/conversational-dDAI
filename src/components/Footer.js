@@ -33,13 +33,19 @@ function Footer(props) {
             <div className="columns">
               <div className="column is-4">
                 <div className="menu">
-                  <p className="menu-label">Product</p>
+                  <p className="menu-label">Products</p>
                   <ul className="menu-list">
                     <li>
-                      <Link to="/pricing">Pricing</Link>
+                      <Link to="https://www.dexwallet.io/">Dexwallet</Link>
                     </li>
                     <li>
-                      <Link to="/faq">FAQ</Link>
+                      <Link to="https://defitracker.io/">DeFi Tracker</Link>
+                    </li>
+                    <li>
+                      <Link to="https://dexpay.me/">Dexay</Link>
+                    </li>
+                    <li>
+                      <Link to="https://ddai.netlify.com/">dDAI Advanced</Link>
                     </li>
                   </ul>
                 </div>

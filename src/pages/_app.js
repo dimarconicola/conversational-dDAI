@@ -18,7 +18,7 @@ function App(props) {
                   style={{
                     padding: "50px",
                     width: "100%",
-                    textAlign: "center"
+                    textAlign: "center",
                   }}
                 >
                   The page <code>{location.pathname}</code> could not be found.
