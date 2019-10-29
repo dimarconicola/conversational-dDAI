@@ -6,6 +6,7 @@ import TestimonialsSection from "./../components/TestimonialsSection";
 import ContactSection from "./../components/ContactSection";
 import Footer from "./../components/Footer";
 import { useRouter } from "./../util/router.js";
+import Conversation from "../components/Conversation";
 
 function IndexPage(props) {
   const router = useRouter();
@@ -15,9 +16,10 @@ function IndexPage(props) {
       <Navbar
         color="white"
         spaced={true}
-        logo="https://uploads.divjoy.com/logo.svg"
+        logo="../images/logo.svg"
       />
-      <HeroSection
+      <Conversation />
+      {/* <HeroSection
         color="white"
         size="medium"
         title="Your landing page title here"
@@ -26,7 +28,7 @@ function IndexPage(props) {
         buttonOnClick={() => {
           router.push("/pricing");
         }}
-      />
+      /> */}
       <ClientsSection
         color="white"
         size="medium"

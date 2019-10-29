@@ -3,6 +3,18 @@ import NavbarContainer from "./NavbarContainer";
 import { Link, useRouter } from "./../util/router.js";
 import SectionButton from "./SectionButton";
 import { useAuth } from "./../util/auth.js";
+import styled from "styled-components";
+
+const NavBarItem = styled.div`
+`;
+
+const Logo = styled.img`
+height: 80px;
+
+@media (max-width: 1000px) {
+margin: 20px;
+  }
+`;
 
 function Navbar(props) {
   const auth = useAuth();
@@ -13,11 +25,11 @@ function Navbar(props) {
     <NavbarContainer spaced={props.spaced} color={props.color}>
       <div className="container">
         <div className="navbar-brand">
-          <div className="navbar-item">
+          <NavBarItem>
             <Link to="/">
-              <img className="image" src={props.logo} alt="Logo" />
+              <Logo src={props.logo} alt="Logo" />
             </Link>
-          </div>
+          </NavBarItem>
           <div
             className={"navbar-burger burger" + (menuOpen ? " is-active" : "")}
             onClick={() => setMenuOpen(!menuOpen)}
@@ -33,7 +45,7 @@ function Navbar(props) {
               About
             </Link>
             <Link className="navbar-item" to="/pricing">
-              Pricing
+              Dexwallet
             </Link>
             <Link className="navbar-item" to="/faq">
               FAQ
@@ -45,28 +57,13 @@ function Navbar(props) {
                   Account
                 </Link>
                 <div className="navbar-dropdown is-boxed">
-                  <Link className="navbar-item" to="/dashboard">
-                    Dashboard
-                  </Link>
-                  <Link
-                    className="navbar-item"
-                    to="/signout"
-                    onClick={e => {
-                      e.preventDefault();
-                      auth.signout();
-                    }}
-                  >
-                    Sign out
-                  </Link>
+
                 </div>
               </div>
             )}
 
             {!auth.user && (
               <>
-                <Link className="navbar-item" to="/signin">
-                  Sign in
-                </Link>
                 <div className="navbar-item">
                   <SectionButton
                     parentColor={props.color}
@@ -75,7 +72,7 @@ function Navbar(props) {
                       router.push("/signup");
                     }}
                   >
-                    Sign Up
+                    Connect Metamask
                   </SectionButton>
                 </div>
               </>

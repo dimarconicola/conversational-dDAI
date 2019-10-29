@@ -25,7 +25,7 @@ function SectionButton(props) {
         ].includes(parentColor)
           ? ` is-${parentColor} is-inverted`
           : "") +
-        (["white", "light"].includes(parentColor) || !parentColor
+        (["white", "dark"].includes(parentColor) || !parentColor
           ? " is-primary"
           : "") +
         (size ? ` is-${size}` : "") +
