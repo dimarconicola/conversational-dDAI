@@ -1,6 +1,8 @@
 import React from "react";
 import Section from "./Section";
 import styled from "styled-components";
+import TextLoop from "react-text-loop";
+
 
 const Text = styled.span`
   font-size: 3em;
@@ -34,6 +36,9 @@ const Form = styled.form`
   text-align: right;
   margin-right: 15px;
   margin-top: 15px;
+  -moz-appearance:none; /* Firefox */
+  -webkit-appearance:none; /* Safari and Chrome */
+  appearance:none;
 
 
   @media (max-width: 800px) {
@@ -46,6 +51,58 @@ const Form = styled.form`
     text-align: right;
   }
 `;
+
+const FormCustom = styled.form`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: none;
+  border-radius: 0px;
+  background-color: #fff;
+  text-align: right;
+  margin-right: 15px;
+  margin-top: 15px;
+
+  @media (max-width: 800px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 0;
+    text-align: right;
+  }
+`;
+
+const RecipesCustom = styled.select`
+  border: 0px solid #ffffff;
+  border-radius: 5px;
+  background-color: #ffffff;
+  text-align: right;
+  font-size: 3em;
+  color: black;
+  font-weight: 700;
+  margin: 0;
+  -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    /* border-bottom: 4px dotted #000; */
+    text-decoration:underline;
+    text-decoration-style: dotted;
+
+
+
+  :focus {
+    outline: none;
+  }
+`;
+
+const OptionCustom = styled.option`
+color: #000000;
+`;
+
+
+
+
 
 const Input = styled.input`
   display: flex;
@@ -63,50 +120,16 @@ const Input = styled.input`
 
   :focus {
     outline: none;
+    appearance:none;
   }
 
   :focus::placeholder {
-    color: transparent;
+    color: transparent;    
   }
-`;
 
-const Select = styled.select`
-  border: 0px solid #f2f2f2;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  text-align: right;
-  width: 100px;
-  font-size: 1.2rem;
-  margin: 0 10px;
-  height: 60px;
-
-  :focus {
-    outline: none;
-  }
-`;
-
-const Recipes = styled.select`
-  border: 0px solid #f2f2f2;
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  text-align: right;
-  width: 220px;
-  font-size: 1.2rem;
-  margin: 0 10px;
-  height: 60px;
-
-  :focus {
-    outline: none;
-  }
-`;
-
-const Option = styled.option`
-  background-repeat: no-repeat;
-  background-position: cover;
-`;
-
-const Space = styled.span`
-  width: 20px;
+  input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
 `;
 
 const DaiLogo = styled.img`
@@ -123,7 +146,14 @@ function Conversation(props) {
           <Text>want </Text>
           <Text>to </Text>
           <Text>gain </Text>
+          <TextLoop interval={500} className='textloop'>
           <Text>🤑 </Text>
+          <Text>💳 </Text>
+          <Text>💵 </Text>
+          <Text>💶 </Text>
+          <Text>💲 </Text>
+          <Text>💹 </Text>                 
+           </TextLoop>
           <APR>9,5% </APR>
           <Text>per year </Text>
           <Text>by depositing </Text>
@@ -150,13 +180,20 @@ function Conversation(props) {
           <Text>my </Text>
           <Text>earnings </Text>
           <Text>in</Text>
-          <Form>
+          {/* <Form>
             <Recipes name="token" id="currencies" className="icon-menu">
             <Option>Select Recipe ...</Option>
               <Option>ETH + BTC</Option>
               <Option>Repay Compound Loan</Option>
             </Recipes>
-          </Form>
+          </Form> */}
+          <FormCustom>
+            <RecipesCustom name="token" id="currencies" className="icon-menu">
+            <OptionCustom>ETH Maximalist</OptionCustom>
+              <OptionCustom>ETH + BTC</OptionCustom>
+              <OptionCustom>Repay Compound Loan</OptionCustom>
+            </RecipesCustom>
+          </FormCustom>
         </Container>
       </div>
     </Section>
