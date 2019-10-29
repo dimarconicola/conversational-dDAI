@@ -152,6 +152,7 @@ function Conversation(props) {
           <Text>in</Text>
           <Form>
             <Recipes name="token" id="currencies" className="icon-menu">
+            <Option>Select Recipe ...</Option>
               <Option>ETH + BTC</Option>
               <Option>Repay Compound Loan</Option>
             </Recipes>
